@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="id" class="h-full" style="scroll-behavior:smooth">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KOPI LOKAL NUSANTARA - Premium Coffee</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&amp;family=DM+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script>
+tailwind.config={theme:{extend:{colors:{coffee:{50:'#fdf8f0',100:'#f5e6d3',200:'#e8c9a0',300:'#d4a574',400:'#c4884d',500:'#8B4513',600:'#6b3410',700:'#4a2409',800:'#2d1606',900:'#1a0d04'},gold:{400:'#d4a54a',500:'#c49a3c'}},fontFamily:{display:['Playfair Display','serif'],body:['DM Sans','sans-serif']}}}}
+</script>
+  <style>
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.fade-up{animation:fadeUp .8s ease forwards;opacity:0}
+.fade-up-d1{animation-delay:.1s}.fade-up-d2{animation-delay:.2s}.fade-up-d3{animation-delay:.3s}.fade-up-d4{animation-delay:.4s}
+.float-anim{animation:float 3s ease-in-out infinite}
+.card-hover{transition:all .3s ease}
+.card-hover:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(139,69,19,.15)}
+.btn-glow{position:relative;overflow:hidden}
+.btn-glow::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent,rgba(255,255,255,.1),transparent);transform:rotate(45deg);transition:.5s}
+.btn-glow:hover::after{left:100%}
+.grain{background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E")}
+.scroll-reveal{opacity:0;transform:translateY(40px);transition:all .7s ease}
+.scroll-reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-body bg-coffee-50 text-coffee-800 overflow-auto"><!-- WhatsApp Float --> <a id="wa-float" href="https://wa.me/6289530732293" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all">
+   <svg width="28" height="28" fill="currentColor" viewbox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" /><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492l4.625-1.47A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75c-2.156 0-4.154-.675-5.797-1.826l-.416-.27-2.742.872.87-2.692-.294-.44A9.71 9.71 0 012.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75z" />
+   </svg></a> <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-40 transition-all duration-300" id="navbar">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between"><a href="#" class="font-display font-bold text-xl sm:text-2xl text-white" id="nav-brand">KOPI LOKAL NUSANTARA</a>
+    <div class="hidden md:flex items-center gap-8"><a href="#tentang" class="text-white/80 hover:text-gold-400 transition text-sm font-medium">Tentang</a> <a href="#produk" class="text-white/80 hover:text-gold-400 transition text-sm font-medium">Produk</a> <a href="#testimoni" class="text-white/80 hover:text-gold-400 transition text-sm font-medium">Testimoni</a> <a href="#reseller" class="text-white/80 hover:text-gold-400 transition text-sm font-medium">Reseller</a> <a href="#kontak" class="text-white/80 hover:text-gold-400 transition text-sm font-medium">Kontak</a>
+    </div><button id="mobile-menu-btn" class="md:hidden text-white"><i data-lucide="menu"></i></button>
+   </div>
+   <div id="mobile-menu" class="hidden md:hidden bg-coffee-900/95 backdrop-blur-md px-4 pb-4"><a href="#tentang" class="block py-2 text-white/80 hover:text-gold-400 text-sm">Tentang</a> <a href="#produk" class="block py-2 text-white/80 hover:text-gold-400 text-sm">Produk</a> <a href="#testimoni" class="block py-2 text-white/80 hover:text-gold-400 text-sm">Testimoni</a> <a href="#reseller" class="block py-2 text-white/80 hover:text-gold-400 text-sm">Reseller</a> <a href="#kontak" class="block py-2 text-white/80 hover:text-gold-400 text-sm">Kontak</a>
+   </div>
+  </nav><!-- Hero -->
+  <section class="relative w-full min-h-[600px] flex items-center grain" style="background:linear-gradient(135deg,#1a0d04 0%,#2d1606 40%,#4a2409 100%)">
+   <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 70% 30%,#c49a3c 0%,transparent 50%)"></div>
+   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-32 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+     <div class="fade-up inline-block px-4 py-1 border border-gold-400/40 rounded-full text-gold-400 text-xs font-medium mb-6 tracking-widest">
+      PREMIUM QUALITY SINCE 2020
+     </div>
+     <h1 id="hero-headline" class="fade-up fade-up-d1 font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">Nikmat Kopi Asli Pilihan, <span class="text-gold-400">Aroma Kuat</span> &amp; Rasa Berkelas</h1>
+     <p id="hero-sub" class="fade-up fade-up-d2 text-coffee-200 text-lg mb-8 max-w-lg">Kopi bubuk berkualitas untuk pecinta kopi sejati. Dipilih dari biji terbaik Nusantara.</p>
+     <div class="fade-up fade-up-d3 flex flex-wrap gap-4"><a href="#produk" class="btn-glow bg-gold-400 hover:bg-gold-500 text-coffee-900 font-semibold px-8 py-3 rounded-full transition-all">Pesan Sekarang</a> <a href="#produk" class="border border-white/30 hover:border-gold-400 text-white hover:text-gold-400 font-medium px-8 py-3 rounded-full transition-all">Lihat Produk</a>
+     </div>
+     <div class="fade-up fade-up-d4 mt-10 flex gap-8">
+      <div>
+       <div class="text-gold-400 font-display text-2xl font-bold">
+        5000+
+       </div>
+       <div class="text-coffee-300 text-xs">
+        Pelanggan Puas
+       </div>
+      </div>
+      <div>
+       <div class="text-gold-400 font-display text-2xl font-bold">
+        100%
+       </div>
+       <div class="text-coffee-300 text-xs">
+        Kopi Pilihan
+       </div>
+      </div>
+      <div>
+       <div class="text-gold-400 font-display text-2xl font-bold">
+        4.9★
+       </div>
+       <div class="text-coffee-300 text-xs">
+        Rating
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="hidden md:flex justify-center">
+     <div class="relative float-anim">
+      <div class="w-72 h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-coffee-400/30 to-coffee-700/50 flex items-center justify-center border border-gold-400/20">
+       <svg width="160" height="160" viewbox="0 0 100 100" class="drop-shadow-2xl">
+        <ellipse cx="50" cy="75" rx="28" ry="8" fill="#1a0d04" opacity=".3" /><path d="M25 35c0-5 5-15 25-15s25 10 25 15v25c0 12-10 20-25 20S25 72 25 60z" fill="#4a2409" stroke="#c49a3c" stroke-width=".5" /><path d="M25 35c0 5 10 10 25 10s25-5 25-10" fill="#6b3410" /><ellipse cx="50" cy="35" rx="25" ry="10" fill="#8B4513" /><path d="M75 45c5 0 10 3 10 8s-5 8-10 8" fill="none" stroke="#c49a3c" stroke-width="2" /><path d="M38 20c0-3 2-5 4-7M50 18c0-4 1-6 2-9M60 20c0-3-1-5-3-7" fill="none" stroke="#c49a3c" stroke-width="1" opacity=".6" stroke-linecap="round">
+         <animate attributename="opacity" values=".3;.8;.3" dur="2s" repeatcount="indefinite" />
+        </path>
+       </svg>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Tentang -->
+  <section id="tentang" class="w-full py-20 bg-white">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="scroll-reveal text-center mb-16"><span class="text-gold-500 text-sm font-semibold tracking-widest uppercase">Tentang Kami</span>
+     <h2 class="font-display text-3xl sm:text-4xl font-bold text-coffee-800 mt-3">Cerita Di Balik Setiap <span class="text-gold-500">Seduhan</span></h2>
+     <p class="text-coffee-600 mt-4 max-w-2xl mx-auto">Berawal dari kecintaan pada kopi Nusantara, kami hadir menghadirkan kopi bubuk premium dengan harga terjangkau untuk semua kalangan.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+     <div class="scroll-reveal space-y-6">
+      <p class="text-coffee-600 leading-relaxed">Kami memilih langsung biji kopi terbaik dari petani lokal di dataran tinggi Sumatera, Jawa, dan Sulawesi. Setiap biji melalui proses seleksi ketat untuk memastikan kualitas terbaik sampai di tangan Anda.</p>
+      <p class="text-coffee-600 leading-relaxed">Proses roasting dilakukan secara profesional dengan mesin modern untuk menghasilkan aroma dan rasa yang konsisten di setiap kemasan.</p>
+      <div class="grid grid-cols-2 gap-4 pt-4">
+       <div class="bg-coffee-50 rounded-xl p-4 text-center card-hover">
+        <div class="text-2xl mb-1">
+         ☕
+        </div>
+        <div class="text-sm font-semibold text-coffee-700">
+         100% Kopi Pilihan
+        </div>
+       </div>
+       <div class="bg-coffee-50 rounded-xl p-4 text-center card-hover">
+        <div class="text-2xl mb-1">
+         🔥
+        </div>
+        <div class="text-sm font-semibold text-coffee-700">
+         Fresh Roast
+        </div>
+       </div>
+       <div class="bg-coffee-50 rounded-xl p-4 text-center card-hover">
+        <div class="text-2xl mb-1">
+         👃
+        </div>
+        <div class="text-sm font-semibold text-coffee-700">
+         Aroma Khas
+        </div>
+       </div>
+       <div class="bg-coffee-50 rounded-xl p-4 text-center card-hover">
+        <div class="text-2xl mb-1">
+         💰
+        </div>
+        <div class="text-sm font-semibold text-coffee-700">
+         Harga Terjangkau
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="scroll-reveal relative">
+      <div class="rounded-2xl overflow-hidden bg-gradient-to-br from-coffee-200 to-coffee-300 aspect-square flex items-center justify-center">
+       <svg width="200" height="200" viewbox="0 0 100 100">
+        <rect x="20" y="30" width="60" height="50" rx="5" fill="#4a2409" /><rect x="22" y="32" width="56" height="20" fill="#6b3410" /><text x="50" y="45" text-anchor="middle" fill="#c49a3c" font-size="6" font-family="serif" font-weight="bold">
+         KOPI LOKAL NUSANTARA
+        </text><text x="50" y="55" text-anchor="middle" fill="#c49a3c" font-size="3">
+         PREMIUM BLEND
+        </text><rect x="35" y="75" width="30" height="5" rx="2" fill="#2d1606" /><circle cx="50" cy="20" r="3" fill="none" stroke="#c49a3c" stroke-width=".5" /><path d="M47 20h6M50 17v6" stroke="#c49a3c" stroke-width=".5" />
+       </svg>
+      </div>
+      <div class="absolute -bottom-4 -right-4 bg-gold-400 text-coffee-900 px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+       Est. 2020
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Keunggulan -->
+  <section class="w-full py-20 grain" style="background:linear-gradient(180deg,#1a0d04,#2d1606)">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="scroll-reveal text-center mb-14"><span class="text-gold-400 text-sm font-semibold tracking-widest uppercase">Mengapa Pilih Kami</span>
+     <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-3">Keunggulan <span class="text-gold-400">Kopi Lokal Nusantara</span></h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+     <div class="scroll-reveal bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 text-center card-hover">
+      <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-gold-400/20 flex items-center justify-center">
+       <i data-lucide="wind" class="text-gold-400 w-6 h-6"></i>
+      </div>
+      <h3 class="text-white font-semibold mb-2">Aroma Kuat</h3>
+      <p class="text-coffee-300 text-sm">Wangi kopi yang menggugah selera</p>
+     </div>
+     <div class="scroll-reveal bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 text-center card-hover">
+      <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-gold-400/20 flex items-center justify-center">
+       <i data-lucide="flame" class="text-gold-400 w-6 h-6"></i>
+      </div>
+      <h3 class="text-white font-semibold mb-2">Fresh Roast</h3>
+      <p class="text-coffee-300 text-sm">Roasting segar setiap hari</p>
+     </div>
+     <div class="scroll-reveal bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 text-center card-hover">
+      <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-gold-400/20 flex items-center justify-center">
+       <i data-lucide="shield-check" class="text-gold-400 w-6 h-6"></i>
+      </div>
+      <h3 class="text-white font-semibold mb-2">Higienis</h3>
+      <p class="text-coffee-300 text-sm">Kemasan aman &amp; bersih</p>
+     </div>
+     <div class="scroll-reveal bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 text-center card-hover">
+      <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-gold-400/20 flex items-center justify-center">
+       <i data-lucide="truck" class="text-gold-400 w-6 h-6"></i>
+      </div>
+      <h3 class="text-white font-semibold mb-2">Kirim Se-Indonesia</h3>
+      <p class="text-coffee-300 text-sm">Pengiriman cepat &amp; aman</p>
+     </div>
+     <div class="scroll-reveal bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 text-center card-hover">
+      <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-gold-400/20 flex items-center justify-center">
+       <i data-lucide="users" class="text-gold-400 w-6 h-6"></i>
+      </div>
+      <h3 class="text-white font-semibold mb-2">Harga Grosir</h3>
+      <p class="text-coffee-300 text-sm">Tersedia untuk reseller</p>
+     </div>
+    </div>
+   </div>
+  </section><!-- Produk -->
+  <section id="produk" class="w-full py-20 bg-coffee-50">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="scroll-reveal text-center mb-12"><span class="text-gold-500 text-sm font-semibold tracking-widest uppercase">Katalog Produk</span>
+     <h2 class="font-display text-3xl sm:text-4xl font-bold text-coffee-800 mt-3">Pilihan Kopi <span class="text-gold-500">Terbaik</span></h2>
+    </div><!-- Filter -->
+    <div class="scroll-reveal flex flex-wrap justify-center gap-3 mb-10" id="product-filter"><button class="filter-btn active px-5 py-2 rounded-full text-sm font-medium bg-coffee-800 text-white transition" data-cat="all">Semua</button> <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-white text-coffee-600 border border-coffee-200 hover:bg-coffee-800 hover:text-white transition" data-cat="robusta">Robusta</button> <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-white text-coffee-600 border border-coffee-200 hover:bg-coffee-800 hover:text-white transition" data-cat="arabica">Arabica</button> <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-white text-coffee-600 border border-coffee-200 hover:bg-coffee-800 hover:text-white transition" data-cat="blend">Blend</button> <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-white text-coffee-600 border border-coffee-200 hover:bg-coffee-800 hover:text-white transition" data-cat="premium">Premium</button>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="product-grid"></div>
+   </div>
+  </section><!-- Testimoni -->
+  <section id="testimoni" class="w-full py-20 bg-white">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="scroll-reveal text-center mb-14"><span class="text-gold-500 text-sm font-semibold tracking-widest uppercase">Testimoni</span>
+     <h2 class="font-display text-3xl sm:text-4xl font-bold text-coffee-800 mt-3">Kata Mereka Tentang <span class="text-gold-500">Kopi Kami</span></h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+     <div class="scroll-reveal bg-coffee-50 rounded-2xl p-6 card-hover border border-coffee-100">
+      <div class="flex text-gold-400 mb-3">
+       ★★★★★
+      </div>
+      <p class="text-coffee-600 italic mb-4">"Aromanya mantap banget! Sekali seduh, seruangan langsung wangi kopi. Kualitas juara dengan harga bersahabat."</p>
+      <div class="flex items-center gap-3">
+       <div class="w-10 h-10 rounded-full bg-coffee-300 flex items-center justify-center text-white font-bold text-sm">
+        AS
+       </div>
+       <div>
+        <div class="font-semibold text-coffee-800 text-sm">
+         Ahmad Syahrul
+        </div>
+        <div class="text-xs text-coffee-500">
+         Pemilik Warung Kopi
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="scroll-reveal bg-coffee-50 rounded-2xl p-6 card-hover border border-coffee-100">
+      <div class="flex text-gold-400 mb-3">
+       ★★★★★
+      </div>
+      <p class="text-coffee-600 italic mb-4">"Rasa kopi khas warung premium tapi bisa dinikmati di rumah. Sudah repeat order lebih dari 10 kali!"</p>
+      <div class="flex items-center gap-3">
+       <div class="w-10 h-10 rounded-full bg-coffee-400 flex items-center justify-center text-white font-bold text-sm">
+        DR
+       </div>
+       <div>
+        <div class="font-semibold text-coffee-800 text-sm">
+         Dewi Rahayu
+        </div>
+        <div class="text-xs text-coffee-500">
+         Coffee Enthusiast
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="scroll-reveal bg-coffee-50 rounded-2xl p-6 card-hover border border-coffee-100">
+      <div class="flex text-gold-400 mb-3">
+       ★★★★★
+      </div>
+      <p class="text-coffee-600 italic mb-4">"Repeat order terus! Pelanggan warung saya pada ketagihan. Harga grosirnya sangat membantu bisnis saya."</p>
+      <div class="flex items-center gap-3">
+       <div class="w-10 h-10 rounded-full bg-coffee-500 flex items-center justify-center text-white font-bold text-sm">
+        BH
+       </div>
+       <div>
+        <div class="font-semibold text-coffee-800 text-sm">
+         Budi Hartono
+        </div>
+        <div class="text-xs text-coffee-500">
+         Reseller Kopi
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Galeri -->
+  <section class="w-full py-20 grain" style="background:linear-gradient(180deg,#2d1606,#1a0d04)">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="scroll-reveal text-center mb-14"><span class="text-gold-400 text-sm font-semibold tracking-widest uppercase">Galeri</span>
+     <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-3">Proses <span class="text-gold-400">Pembuatan</span></h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+     <div class="scroll-reveal rounded-xl overflow-hidden bg-coffee-700/50 aspect-square flex items-center justify-center border border-gold-400/10 card-hover">
+      <div class="text-center">
+       <div class="text-4xl mb-2">
+        🌱
+       </div>
+       <p class="text-coffee-200 text-sm">Petik Biji</p>
+      </div>
+     </div>
+     <div class="scroll-reveal rounded-xl overflow-hidden bg-coffee-700/50 aspect-square flex items-center justify-center border border-gold-400/10 card-hover">
+      <div class="text-center">
+       <div class="text-4xl mb-2">
+        🔥
+       </div>
+       <p class="text-coffee-200 text-sm">Roasting</p>
+      </div>
+     </div>
+     <div class="scroll-reveal rounded-xl overflow-hidden bg-coffee-700/50 aspect-square flex items-center justify-center border border-gold-400/10 card-hover">
+      <div class="text-center">
+       <div class="text-4xl mb-2">
+        ⚙️
+       </div>
+       <p class="text-coffee-200 text-sm">Grinding</p>
+      </div>
+     </div>
+     <div class="scroll-reveal rounded-xl overflow-hidden bg-coffee-700/50 aspect-square flex items-center justify-center border border-gold-400/10 card-hover">
+      <div class="text-center">
+       <div class="text-4xl mb-2">
+        📦
+       </div>
+       <p class="text-coffee-200 text-sm">Packing</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Reseller -->
+  <section id="reseller" class="w-full py-20 bg-white">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="scroll-reveal text-center mb-14"><span class="text-gold-500 text-sm font-semibold tracking-widest uppercase">Peluang Bisnis</span>
+     <h2 class="font-display text-3xl sm:text-4xl font-bold text-coffee-800 mt-3">Paket <span class="text-gold-500">Reseller &amp; Grosir</span></h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+     <div class="scroll-reveal bg-coffee-50 rounded-2xl p-8 border border-coffee-100 card-hover text-center">
+      <div class="text-gold-500 font-semibold text-sm mb-2">
+       STARTER
+      </div>
+      <div class="font-display text-3xl font-bold text-coffee-800 mb-1">
+       Rp 500K
+      </div>
+      <p class="text-coffee-500 text-sm mb-6">Minimal order 5kg</p>
+      <ul class="text-left space-y-3 text-sm text-coffee-600 mb-8">
+       <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>Harga grosir</li>
+       <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>Free ongkir Jawa</li>
+       <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>Konsultasi bisnis</li>
+      </ul><a href="https://wa.me/6289530732293?text=Halo%20saya%20tertarik%20paket%20Starter" target="_blank" rel="noopener noreferrer" class="block w-full bg-coffee-800 hover:bg-coffee-700 text-white py-3 rounded-full font-medium transition">Gabung Sekarang</a>
+     </div>
+     <div class="scroll-reveal bg-gradient-to-br from-coffee-800 to-coffee-900 rounded-2xl p-8 border border-gold-400/30 card-hover text-center relative overflow-hidden">
+      <div class="absolute top-4 right-4 bg-gold-400 text-coffee-900 text-xs font-bold px-3 py-1 rounded-full">
+       BEST SELLER
+      </div>
+      <div class="text-gold-400 font-semibold text-sm mb-2">
+       BUSINESS
+      </div>
+      <div class="font-display text-3xl font-bold text-white mb-1">
+       Rp 1.5Jt
+      </div>
+      <p class="text-coffee-300 text-sm mb-6">Minimal order 15kg</p>
+      <ul class="text-left space-y-3 text-sm text-coffee-200 mb-8">
+       <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-gold-400"></i>Harga spesial reseller</li>
+       <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-gold-400"></i>Free ongkir se-Indonesia</li>
+       <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-gold-400"></i>Materi promosi gratis</li>
+       <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-gold-400"></i>Support marketing</li>
+      </ul><a href="https://wa.me/6289530732293?text=Halo%20saya%20tertarik%20paket%20Business" target="_blank" rel="noopener noreferrer" class="block w-full bg-gold-400 hover:bg-gold-500 text-coffee-900 py-3 rounded-full font-bold transition">Gabung Sekarang</a>
+     </div>
+     <div class="scroll-reveal bg-coffee-50 rounded-2xl p-8 border border-coffee-100 card-hover text-center">
+      <div class="text-gold-500 font-semibold text-sm mb-2">
+       ENTERPRISE
+      </div>
+      <div class="font-display text-3xl font-bold text-coffee-800 mb-1">
+       Custom
+      </div>
+      <p class="text-coffee-500 text-sm mb-6">Order 50kg+</p>
+      <ul class="text-left space-y-3 text-sm text-coffee-600 mb-8">
+       <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>Harga terendah</li>
+       <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>Private label/OEM</li>
+       <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>Prioritas stok</li>
+       <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>Account manager</li>
+      </ul><a href="https://wa.me/6289530732293?text=Halo%20saya%20tertarik%20paket%20Enterprise" target="_blank" rel="noopener noreferrer" class="block w-full bg-coffee-800 hover:bg-coffee-700 text-white py-3 rounded-full font-medium transition">Hubungi Kami</a>
+     </div>
+    </div>
+   </div>
+  </section><!-- FAQ -->
+  <section class="w-full py-20 bg-coffee-50">
+   <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <div class="scroll-reveal text-center mb-14"><span class="text-gold-500 text-sm font-semibold tracking-widest uppercase">FAQ</span>
+     <h2 class="font-display text-3xl sm:text-4xl font-bold text-coffee-800 mt-3">Pertanyaan <span class="text-gold-500">Umum</span></h2>
+    </div>
+    <div class="space-y-4" id="faq-container">
+     <div class="scroll-reveal faq-item bg-white rounded-xl border border-coffee-100 overflow-hidden"><button class="faq-btn w-full text-left px-6 py-4 flex items-center justify-between font-medium text-coffee-800" onclick="toggleFaq(this)"><span>Apakah kopi fresh roast?</span><i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i></button>
+      <div class="faq-content hidden px-6 pb-4 text-coffee-600 text-sm">
+       Ya! Semua kopi kami di-roast fresh setiap hari sesuai pesanan. Kami tidak menyimpan stok lama agar kualitas aroma dan rasa tetap terjaga.
+      </div>
+     </div>
+     <div class="scroll-reveal faq-item bg-white rounded-xl border border-coffee-100 overflow-hidden"><button class="faq-btn w-full text-left px-6 py-4 flex items-center justify-between font-medium text-coffee-800" onclick="toggleFaq(this)"><span>Bisa kirim luar kota?</span><i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i></button>
+      <div class="faq-content hidden px-6 pb-4 text-coffee-600 text-sm">
+       Tentu! Kami melayani pengiriman ke seluruh Indonesia melalui JNE, J&amp;T, SiCepat, dan ekspedisi lainnya. Free ongkir untuk pembelian tertentu.
+      </div>
+     </div>
+     <div class="scroll-reveal faq-item bg-white rounded-xl border border-coffee-100 overflow-hidden"><button class="faq-btn w-full text-left px-6 py-4 flex items-center justify-between font-medium text-coffee-800" onclick="toggleFaq(this)"><span>Ada sistem reseller?</span><i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i></button>
+      <div class="faq-content hidden px-6 pb-4 text-coffee-600 text-sm">
+       Ada! Kami menyediakan paket reseller dengan harga spesial mulai dari 5kg. Hubungi kami via WhatsApp untuk info lengkap.
+      </div>
+     </div>
+     <div class="scroll-reveal faq-item bg-white rounded-xl border border-coffee-100 overflow-hidden"><button class="faq-btn w-full text-left px-6 py-4 flex items-center justify-between font-medium text-coffee-800" onclick="toggleFaq(this)"><span>Berapa minimal order?</span><i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i></button>
+      <div class="faq-content hidden px-6 pb-4 text-coffee-600 text-sm">
+       Untuk pembelian eceran minimal 100gr. Untuk grosir/reseller minimal 5kg dengan harga spesial.
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Form Pemesanan -->
+  <section class="w-full py-20 grain" style="background:linear-gradient(135deg,#1a0d04,#2d1606)">
+   <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <div class="scroll-reveal text-center mb-12"><span class="text-gold-400 text-sm font-semibold tracking-widest uppercase">Pemesanan</span>
+     <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-3">Pesan <span class="text-gold-400">Sekarang</span></h2>
+    </div>
+    <form id="order-form" class="scroll-reveal bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 space-y-5">
+     <div class="grid sm:grid-cols-2 gap-5">
+      <div>
+       <label for="nama" class="text-coffee-200 text-sm mb-1 block">Nama Lengkap</label><input id="nama" type="text" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-coffee-400 focus:border-gold-400 focus:outline-none transition" placeholder="Nama Anda">
+      </div>
+      <div>
+       <label for="telp" class="text-coffee-200 text-sm mb-1 block">No. WhatsApp</label><input id="telp" type="tel" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-coffee-400 focus:border-gold-400 focus:outline-none transition" placeholder="08xxxxxxxxxx">
+      </div>
+     </div>
+     <div>
+      <label for="produk-pilih" class="text-coffee-200 text-sm mb-1 block">Produk</label><select id="produk-pilih" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:border-gold-400 focus:outline-none transition"><option value="" class="text-coffee-900">Pilih Produk</option><option class="text-coffee-900">Robusta Lampung 250gr</option><option class="text-coffee-900">Arabica Gayo 250gr</option><option class="text-coffee-900">Blend Special 500gr</option><option class="text-coffee-900">Kopi Premium 1kg</option></select>
+     </div>
+     <div>
+      <label for="alamat" class="text-coffee-200 text-sm mb-1 block">Alamat Pengiriman</label><textarea id="alamat" rows="3" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-coffee-400 focus:border-gold-400 focus:outline-none transition resize-none" placeholder="Alamat lengkap"></textarea>
+     </div><button type="submit" class="btn-glow w-full bg-gold-400 hover:bg-gold-500 text-coffee-900 font-bold py-4 rounded-full transition-all text-lg">Kirim Pesanan via WhatsApp</button>
+     <div id="form-msg" class="hidden text-center text-green-400 text-sm"></div>
+    </form>
+   </div>
+  </section><!-- Footer -->
+  <footer id="kontak" class="w-full py-16 bg-coffee-900">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid md:grid-cols-4 gap-10 mb-12">
+     <div>
+      <h3 class="font-display text-xl font-bold text-white mb-2" id="footer-brand">KOPI LOKAL NUSANTARA</h3>
+      <p class="text-coffee-300 text-sm mb-4">Kopi premium berkualitas untuk semua kalangan. Aroma kuat, rasa berkelas.</p>
+      <div class="flex gap-3"><a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-coffee-300 hover:bg-gold-400 hover:text-coffee-900 transition"><i data-lucide="instagram" class="w-4 h-4"></i></a> <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-coffee-300 hover:bg-gold-400 hover:text-coffee-900 transition">
+        <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+         <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.88 2.89 2.89 0 01-2.88-2.88 2.89 2.89 0 012.88-2.88c.28 0 .56.04.82.11V9.4a6.33 6.33 0 00-.82-.05A6.34 6.34 0 003.15 15.7a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V9.05a8.27 8.27 0 004.76 1.5V7.12a4.83 4.83 0 01-1-.43z" />
+        </svg></a> <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-coffee-300 hover:bg-gold-400 hover:text-coffee-900 transition"><i data-lucide="shopping-bag" class="w-4 h-4"></i></a>
+      </div>
+     </div>
+     <div>
+      <h4 class="text-white font-semibold mb-4">Produk</h4>
+      <ul class="space-y-2 text-coffee-400 text-sm">
+       <li><a href="#produk" class="hover:text-gold-400 transition">Robusta</a></li>
+       <li><a href="#produk" class="hover:text-gold-400 transition">Arabica</a></li>
+       <li><a href="#produk" class="hover:text-gold-400 transition">Blend Special</a></li>
+       <li><a href="#produk" class="hover:text-gold-400 transition">Premium</a></li>
+      </ul>
+     </div>
+     <div>
+      <h4 class="text-white font-semibold mb-4">Informasi</h4>
+      <ul class="space-y-2 text-coffee-400 text-sm">
+       <li><a href="#tentang" class="hover:text-gold-400 transition">Tentang Kami</a></li>
+       <li><a href="#reseller" class="hover:text-gold-400 transition">Jadi Reseller</a></li>
+       <li><a href="#" class="hover:text-gold-400 transition">Cara Order</a></li>
+       <li><a href="#" class="hover:text-gold-400 transition">Kebijakan Privasi</a></li>
+      </ul>
+     </div>
+     <div>
+      <h4 class="text-white font-semibold mb-4">Kontak</h4>
+      <ul class="space-y-3 text-coffee-400 text-sm">
+       <li class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-gold-400"></i>Gg, Darussalam Plandi, Jombang</li>
+       <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-gold-400"></i>0895-3073-2293</li>
+       <li class="flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-gold-400"></i>Senin - Sabtu, 08.00 - 17.00</li>
+      </ul>
+     </div>
+    </div>
+    <div class="border-t border-coffee-700 pt-8 text-center text-coffee-500 text-sm">
+     <p>© 2024 Kopi Lokal Nusantara. All rights reserved. Crafted with ☕ &amp; ❤️</p>
+    </div>
+   </div>
+  </footer><!-- Cart Drawer -->
+  <div id="cart-overlay" class="hidden fixed inset-0 bg-black/50 z-50" onclick="toggleCart()"></div>
+  <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-sm bg-white z-50 transform translate-x-full transition-transform duration-300 overflow-auto shadow-2xl">
+   <div class="p-6">
+    <div class="flex items-center justify-between mb-6">
+     <h3 class="font-display text-xl font-bold text-coffee-800">Keranjang</h3><button onclick="toggleCart()" class="text-coffee-500 hover:text-coffee-800"><i data-lucide="x" class="w-6 h-6"></i></button>
+    </div>
+    <div id="cart-items" class="space-y-4"></div>
+    <div id="cart-empty" class="text-center py-12 text-coffee-400">
+     <i data-lucide="shopping-cart" class="w-12 h-12 mx-auto mb-3 opacity-50"></i>
+     <p>Keranjang masih kosong</p>
+    </div>
+    <div id="cart-footer" class="hidden border-t border-coffee-100 mt-6 pt-6">
+     <div class="flex justify-between items-center mb-4">
+      <span class="font-semibold text-coffee-800">Total:</span><span id="cart-total" class="font-display text-xl font-bold text-coffee-800">Rp 0</span>
+     </div><a id="cart-wa-btn" href="#" target="_blank" rel="noopener noreferrer" class="block w-full bg-green-500 hover:bg-green-600 text-white text-center py-3 rounded-full font-semibold transition">Checkout via WhatsApp</a>
+    </div>
+   </div>
+  </div><!-- Cart FAB --> <button id="cart-fab" onclick="toggleCart()" class="fixed bottom-6 left-6 z-50 bg-coffee-800 hover:bg-coffee-700 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all"> <i data-lucide="shopping-cart" class="w-6 h-6"></i> <span id="cart-badge" class="hidden absolute -top-1 -right-1 bg-gold-400 text-coffee-900 text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span> </button>
+  <script>
+// Config & SDK
+const defaultConfig = {
+  brand_name: 'KOPI NUSANTARA',
+  hero_headline: 'Nikmat Kopi Asli Pilihan, Aroma Kuat & Rasa Berkelas',
+  hero_subheadline: 'Kopi bubuk berkualitas untuk pecinta kopi sejati. Dipilih dari biji terbaik Nusantara.',
+  whatsapp_number: '6289530732293',
+  background_color: '#1a0d04',
+  surface_color: '#ffffff',
+  text_color: '#2d1606',
+  primary_action_color: '#d4a54a',
+  secondary_action_color: '#8B4513',
+  font_family: 'Playfair Display',
+  font_size: 16
+};
+
+let cart = [];
+const products = [
+  {name:'Robusta Lampung',cat:'robusta',desc:'Rasa bold & earthy khas Lampung',weight:'250gr',price:35000,rating:4.8},
+  {name:'Arabica Gayo',cat:'arabica',desc:'Citrus & floral notes dari Aceh',weight:'250gr',price:55000,rating:4.9},
+  {name:'Blend Special House',cat:'blend',desc:'Perpaduan sempurna robusta & arabica',weight:'500gr',price:65000,rating:4.7},
+  {name:'Robusta Toraja',cat:'robusta',desc:'Full body dengan aftertaste coklat',weight:'250gr',price:45000,rating:4.8},
+  {name:'Arabica Java',cat:'arabica',desc:'Medium body, nutty & caramel',weight:'250gr',price:50000,rating:4.9},
+  {name:'Premium Gold Blend',cat:'premium',desc:'Biji pilihan terbaik, limited edition',weight:'500gr',price:95000,rating:5.0},
+];
+
+function renderProducts(filter='all'){
+  const grid=document.getElementById('product-grid');
+  const filtered=filter==='all'?products:products.filter(p=>p.cat===filter);
+  grid.innerHTML=filtered.map((p,i)=>`
+    <div class="scroll-reveal visible bg-white rounded-2xl overflow-hidden border border-coffee-100 card-hover">
+      <div class="h-48 bg-gradient-to-br from-coffee-100 to-coffee-200 flex items-center justify-center relative">
+        <svg width="80" height="100" viewBox="0 0 50 70"><rect x="10" y="5" width="30" height="50" rx="3" fill="#4a2409"/><rect x="12" y="8" width="26" height="15" fill="#6b3410"/><text x="25" y="17" text-anchor="middle" fill="#c49a3c" font-size="3.5" font-weight="bold">KOPI</text><text x="25" y="21" text-anchor="middle" fill="#c49a3c" font-size="2.5">NUSANTARA</text><rect x="15" y="55" width="20" height="4" rx="1" fill="#2d1606"/></svg>
+        <div class="absolute top-3 right-3 bg-gold-400 text-coffee-900 text-xs font-bold px-2 py-1 rounded-full">${p.weight}</div>
+      </div>
+      <div class="p-5">
+        <div class="flex items-center gap-1 text-gold-400 text-sm mb-1">${'★'.repeat(Math.floor(p.rating))} <span class="text-coffee-400 text-xs">${p.rating}</span></div>
+        <h3 class="font-display font-bold text-coffee-800 mb-1">${p.name}</h3>
+        <p class="text-coffee-500 text-sm mb-3">${p.desc}</p>
+        <div class="flex items-center justify-between">
+          <span class="font-bold text-coffee-800">Rp ${p.price.toLocaleString('id')}</span>
+          <button onclick="addToCart(${i})" class="bg-coffee-800 hover:bg-coffee-700 text-white px-4 py-2 rounded-full text-sm font-medium transition flex items-center gap-1"><i data-lucide="shopping-cart" class="w-4 h-4"></i> Beli</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  lucide.createIcons();
+}
+
+function addToCart(idx){
+  const p=products[idx];
+  const existing=cart.find(c=>c.name===p.name);
+  if(existing)existing.qty++;
+  else cart.push({...p,qty:1});
+  updateCart();
+  const badge=document.getElementById('cart-badge');
+  badge.classList.remove('hidden');
+  badge.textContent=cart.reduce((a,c)=>a+c.qty,0);
+}
+
+function updateCart(){
+  const items=document.getElementById('cart-items');
+  const empty=document.getElementById('cart-empty');
+  const footer=document.getElementById('cart-footer');
+  if(cart.length===0){empty.classList.remove('hidden');footer.classList.add('hidden');items.innerHTML='';return;}
+  empty.classList.add('hidden');footer.classList.remove('hidden');
+  items.innerHTML=cart.map((c,i)=>`
+    <div class="flex items-center gap-3 bg-coffee-50 rounded-xl p-3">
+      <div class="w-12 h-12 bg-coffee-200 rounded-lg flex items-center justify-center text-lg">☕</div>
+      <div class="flex-1"><div class="font-semibold text-coffee-800 text-sm">${c.name}</div><div class="text-coffee-500 text-xs">Rp ${c.price.toLocaleString('id')} x ${c.qty}</div></div>
+      <button onclick="removeFromCart(${i})" class="text-red-400 hover:text-red-600"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+    </div>
+  `).join('');
+  const total=cart.reduce((a,c)=>a+c.price*c.qty,0);
+  document.getElementById('cart-total').textContent='Rp '+total.toLocaleString('id');
+  const wa=document.getElementById('whatsapp_number')||{value:defaultConfig.whatsapp_number};
+  const waNum=window.elementSdk?.config?.whatsapp_number||defaultConfig.whatsapp_number;
+  const msg=cart.map(c=>`- ${c.name} (${c.weight}) x${c.qty} = Rp ${(c.price*c.qty).toLocaleString('id')}`).join('%0A');
+  document.getElementById('cart-wa-btn').href=`https://wa.me/${waNum}?text=Halo%20saya%20mau%20order:%0A${msg}%0A%0ATotal:%20Rp%20${total.toLocaleString('id')}`;
+  lucide.createIcons();
+}
+
+function removeFromCart(i){cart.splice(i,1);updateCart();const badge=document.getElementById('cart-badge');const count=cart.reduce((a,c)=>a+c.qty,0);if(count===0)badge.classList.add('hidden');else badge.textContent=count;}
+
+function toggleCart(){
+  const drawer=document.getElementById('cart-drawer');
+  const overlay=document.getElementById('cart-overlay');
+  const open=drawer.classList.contains('translate-x-full');
+  if(open){drawer.classList.remove('translate-x-full');overlay.classList.remove('hidden');}
+  else{drawer.classList.add('translate-x-full');overlay.classList.add('hidden');}
+}
+
+// Filter
+document.getElementById('product-filter').addEventListener('click',e=>{
+  if(!e.target.matches('.filter-btn'))return;
+  document.querySelectorAll('.filter-btn').forEach(b=>{b.classList.remove('bg-coffee-800','text-white');b.classList.add('bg-white','text-coffee-600','border','border-coffee-200');});
+  e.target.classList.add('bg-coffee-800','text-white');e.target.classList.remove('bg-white','text-coffee-600','border','border-coffee-200');
+  renderProducts(e.target.dataset.cat);
+});
+
+// FAQ
+function toggleFaq(btn){
+  const content=btn.nextElementSibling;
+  const icon=btn.querySelector('[data-lucide]');
+  content.classList.toggle('hidden');
+  icon.style.transform=content.classList.contains('hidden')?'':'rotate(180deg)';
+}
+
+// Form
+document.getElementById('order-form').addEventListener('submit',function(e){
+  e.preventDefault();
+  const nama=document.getElementById('nama').value;
+  const telp=document.getElementById('telp').value;
+  const produk=document.getElementById('produk-pilih').value;
+  const alamat=document.getElementById('alamat').value;
+  if(!nama||!telp||!produk||!alamat){document.getElementById('form-msg').classList.remove('hidden');document.getElementById('form-msg').textContent='Mohon lengkapi semua data.';document.getElementById('form-msg').classList.replace('text-green-400','text-red-400');return;}
+  const waNum=window.elementSdk?.config?.whatsapp_number||defaultConfig.whatsapp_number;
+  const msg=`Halo, saya mau order:%0ANama: ${nama}%0ANo HP: ${telp}%0AProduk: ${produk}%0AAlamat: ${alamat}`;
+  window.open(`https://wa.me/${waNum}?text=${msg}`,'_blank');
+  document.getElementById('form-msg').classList.remove('hidden');
+  document.getElementById('form-msg').textContent='Pesanan dikirim ke WhatsApp! ✓';
+  document.getElementById('form-msg').classList.replace('text-red-400','text-green-400');
+});
+
+// Navbar scroll
+window.addEventListener('scroll',()=>{
+  const nav=document.getElementById('navbar');
+  if(window.scrollY>50){nav.style.background='rgba(26,13,4,0.95)';nav.style.backdropFilter='blur(10px)';}
+  else{nav.style.background='transparent';nav.style.backdropFilter='none';}
+});
+
+// Mobile menu
+document.getElementById('mobile-menu-btn').addEventListener('click',()=>{document.getElementById('mobile-menu').classList.toggle('hidden');});
+document.querySelectorAll('#mobile-menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobile-menu').classList.add('hidden')));
+
+// Scroll reveal
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
+document.querySelectorAll('.scroll-reveal').forEach(el=>observer.observe(el));
+
+// Init
+renderProducts();
+lucide.createIcons();
+
+// Element SDK
+window.elementSdk.init({
+  defaultConfig,
+  onConfigChange:async(config)=>{
+    const h=document.getElementById('hero-headline');
+    const s=document.getElementById('hero-sub');
+    const nb=document.getElementById('nav-brand');
+    const fb=document.getElementById('footer-brand');
+    h.innerHTML=(config.hero_headline||defaultConfig.hero_headline).replace(/(Aroma Kuat)/,'<span class="text-gold-400">$1</span>');
+    s.textContent=config.hero_subheadline||defaultConfig.hero_subheadline;
+    nb.textContent=config.brand_name||defaultConfig.brand_name;
+    fb.textContent=config.brand_name||defaultConfig.brand_name;
+    const waLink=document.getElementById('wa-float');
+    waLink.href=`https://wa.me/${config.whatsapp_number||defaultConfig.whatsapp_number}`;
+    document.body.style.fontFamily=`${config.font_family||defaultConfig.font_family}, DM Sans, sans-serif`;
+    const base=config.font_size||defaultConfig.font_size;
+    document.body.style.fontSize=base+'px';
+    document.querySelectorAll('.font-display').forEach(el=>{el.style.fontFamily=`${config.font_family||defaultConfig.font_family}, serif`;});
+    // Colors
+    document.documentElement.style.setProperty('--bg',config.background_color||defaultConfig.background_color);
+    document.documentElement.style.setProperty('--surface',config.surface_color||defaultConfig.surface_color);
+  },
+  mapToCapabilities:(config)=>({
+    recolorables:[
+      {get:()=>config.background_color||defaultConfig.background_color,set:v=>{config.background_color=v;window.elementSdk.setConfig({background_color:v})}},
+      {get:()=>config.surface_color||defaultConfig.surface_color,set:v=>{config.surface_color=v;window.elementSdk.setConfig({surface_color:v})}},
+      {get:()=>config.text_color||defaultConfig.text_color,set:v=>{config.text_color=v;window.elementSdk.setConfig({text_color:v})}},
+      {get:()=>config.primary_action_color||defaultConfig.primary_action_color,set:v=>{config.primary_action_color=v;window.elementSdk.setConfig({primary_action_color:v})}},
+      {get:()=>config.secondary_action_color||defaultConfig.secondary_action_color,set:v=>{config.secondary_action_color=v;window.elementSdk.setConfig({secondary_action_color:v})}},
+    ],
+    borderables:[],
+    fontEditable:{get:()=>config.font_family||defaultConfig.font_family,set:v=>{config.font_family=v;window.elementSdk.setConfig({font_family:v})}},
+    fontSizeable:{get:()=>config.font_size||defaultConfig.font_size,set:v=>{config.font_size=v;window.elementSdk.setConfig({font_size:v})}}
+  }),
+  mapToEditPanelValues:(config)=>new Map([
+    ['brand_name',config.brand_name||defaultConfig.brand_name],
+    ['hero_headline',config.hero_headline||defaultConfig.hero_headline],
+    ['hero_subheadline',config.hero_subheadline||defaultConfig.hero_subheadline],
+    ['whatsapp_number',config.whatsapp_number||defaultConfig.whatsapp_number],
+  ])
+});
+</script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f8d795965033f5f',t:'MTc3ODI5NTgzOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
